@@ -1,0 +1,111 @@
+//1
+use vendas_informatica;
+SELECT * from produto
+
+//2
+use vendas_informatica;
+SELECT nome_produto, marca, estoque from produto
+
+//3
+use vendas_informatica;
+SELECT nome_produto, categoria, preco_unitario, data_cadastro from produto
+ORDER BY marca ASC;
+
+//4
+use vendas_informatica;
+SELECT nome_produto, marca, estoque from produto
+ORDER BY data_cadastro ASC;
+
+//5
+use vendas_informatica;
+SELECT * from cliente
+
+//6
+use vendas_informatica;
+SELECT nome_cliente, email, cidade, estado from cliente
+
+//7
+use vendas_informatica;
+SELECT nome_cliente, cidade, estado from cliente
+ORDER BY estado ASC;
+
+//8
+use vendas_informatica;
+SELECT nome_cliente, email, estado from cliente
+ORDER BY data_cadastro DESC;
+
+//9
+use vendas_informatica;
+SELECT * FROM venda
+
+//10
+use vendas_informatica;
+SELECT cliente.nome_cliente, venda.data_venda, venda.preco_unitario_venda, venda.forma_pagamento
+FROM cliente 
+INNER JOIN venda
+ON cliente.id_cliente = venda.id_cliente;
+
+//11
+use vendas_informatica;
+SELECT produto.nome_produto, venda.data_venda, venda.quantidade, venda.status_venda
+FROM produto
+INNER JOIN venda
+ON produto.id_produto = venda.id_produto;
+
+//12
+use vendas_informatica;
+SELECT produto.nome_produto, produto.preco_unitario, venda.forma_pagamento
+FROM produto
+INNER JOIN venda
+ON produto.id_produto = venda.id_produto
+WHERE forma_pagamento IN ("PIX","Boleto")
+
+//13
+
+USE vendas_informatica;
+SELECT 
+    cliente.nome_cliente, 
+    produto.nome_produto, 
+    venda.data_venda, 
+    venda.quantidade 
+FROM cliente 
+INNER JOIN venda ON cliente.id_cliente = venda.id_cliente 
+INNER JOIN produto ON venda.id_produto = produto.id_produto;
+
+//14
+use vendas_informatica;
+SELECT
+    produto.nome_produto,
+    venda.desconto_percentual,
+    venda.forma_pagamento
+FROM produto
+INNER JOIN venda
+ON produto.id_produto = venda.id_produto
+ORDER BY data_venda DESC;
+
+//15
+use vendas_informatica;
+SELECT
+    produto.nome_produto,
+    cliente.nome_cliente,
+    venda.desconto_percentual,
+    venda.forma_pagamento
+FROM venda
+INNER JOIN produto ON venda.id_produto = produto.id_produto
+INNER JOIN cliente ON venda.id_cliente = cliente.id_cliente
+ORDER BY status_venda DESC;
+
+//16
+use vendas_informatica;
+SELECT
+     cliente.nome_cliente, 
+     cliente.email,
+     produto.nome_produto,
+     produto.marca,
+     produto.categoria,
+     venda.forma_pagamento,
+     venda.status_venda
+FROM venda
+INNER JOIN produto ON venda.id_produto = produto.id_produto
+INNER JOIN cliente ON venda.id_cliente = cliente.id_cliente
+ORDER BY venda.status_venda DESC;
