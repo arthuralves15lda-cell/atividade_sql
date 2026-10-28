@@ -1,0 +1,22 @@
+--1
+impossivel fazer update na tabela
+--2
+UPDATE nome_da_sua_tabela 
+SET coluna_data_cadastro = '2026-01-01' 
+WHERE coluna_cidade = 'Manaus';
+--3
+UPDATE Cliente 
+SET nome_cliente = 'Michael jackson' 
+WHERE id_cliente = 10;
+--4
+UPDATE Produto 
+SET nome_produto = 'notebook Lenovo ideaPad 7' 
+WHERE id_produto = 1;
+--5
+UPDATE Produto 
+SET preco_unitario = 4999.99 
+WHERE marca = 'Dell' AND categoria = 'Notebook';
+--6
+UPDATE Venda 
+SET desconto_percentual = 0.01 
+WHERE quantidade >= 2;
