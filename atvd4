@@ -1,0 +1,18 @@
+--1
+DELETE FROM Cliente 
+WHERE id_cliente = 5;
+--2
+DELETE FROM Cliente 
+WHERE estado = 'SC';
+--3
+DELETE FROM Produto 
+WHERE marca = 'LG';
+--4
+DELETE FROM Produto 
+WHERE id_produto IN (3, 5, 10);
+--5
+DELETE FROM Venda 
+WHERE desconto_percentual = 0;
+--6
+DELETE FROM Venda 
+WHERE status_venda = 'Cancelada';
