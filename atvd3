@@ -1,0 +1,17 @@
+--1
+INSERT INTO Cliente (nome_cliente, email, cidade, estado, data_cadastro) 
+VALUES ('Rubervaldo Sesiano', 'ruber.sesi@gmail.com', 'Jaguariúna', 'SP', '2026-10-28');
+
+
+INSERT INTO cliente (nome_cliente, email, cidade, estado, data_cadastro) 
+VALUES ('Rubervaldo Sesiano', 'ruber.sesi@gmail.com', 'Jaguaríuna', 'São Paulo', '2026-10-28');
+--2
+use vendas_informatica;
+
+INSERT INTO produto (nome_produto, categoria, marca, preco_unitario, estoque, ativo, data_cadastro)
+VALUES ('MousePad 5POL', 'periferico', 'Lumix', 59.98, 35, 1, '2026-10-28');
+
+--3
+use vendas_informatica;
+INSERT INTO venda(id_produto, id_cliente, data_venda, quantidade, preco_unitario_venda, desconto_percentual, forma_pagamento, status_venda)
+VALUES (21, 101, '2020-10-21', 10, 599.98, 1.33, 'PIX', 'Concluida')
